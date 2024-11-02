@@ -1,5 +1,6 @@
 ﻿using CommuteApp.Core.Interfaces.Vehicles;
 using CommuteApp.Core.Models;
+using CommuteApp.Core.Models.Bikes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace CommuteApp.Core.Factories
             switch (type)
             {
                 case "ElectricBike":
-                    return new ElectricBike {BatteryLevel = 100 };
+                    return new ElectricBike {CurrentRange = 10000 };
                 case "PedalBike":
                     return new PedalBike();
                 default:

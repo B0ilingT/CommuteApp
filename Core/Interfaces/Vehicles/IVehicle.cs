@@ -8,7 +8,7 @@ namespace CommuteApp.Core.Interfaces.Vehicles
 {
     public interface IVehicle
     {
-        Guid ID { get; }
+        String ID { get; }
         string VehicleType { get; }
     }
 }

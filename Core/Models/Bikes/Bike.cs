@@ -9,8 +9,10 @@ namespace CommuteApp.Core.Models.Bikes
 {
     public class Bike : IVehicle
     {
-        public Guid ID { get; } = Guid.NewGuid();
+        public String ID { get; set; } = String.Empty;
         public string VehicleType { get; set; } = "Bike";
         public DateTime? LastServicedDate { get; set; }
+
+        public string StationId { get; set; }
     }
 }
