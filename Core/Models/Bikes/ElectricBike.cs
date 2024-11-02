@@ -8,11 +8,12 @@ namespace CommuteApp.Core.Models.Bikes
 {
     public class ElectricBike : Bike
     {
+        public int BatteryLevel { get; set; }
+
         public ElectricBike()
         {
             VehicleType = "Electric Bike";
+            BatteryLevel = 100;
         }
-
-        public int BatteryLevel { get; set; }
     }
 }
