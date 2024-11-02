@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommuteApp.Core.Interfaces
+namespace CommuteApp.Core.Interfaces.Vehicles
 {
     public interface IVehicle
     {

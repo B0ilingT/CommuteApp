@@ -1,4 +1,4 @@
-﻿using CommuteApp.Core.Interfaces;
+﻿using CommuteApp.Core.Interfaces.Stations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
