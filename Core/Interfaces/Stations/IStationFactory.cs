@@ -9,6 +9,6 @@ namespace CommuteApp.Core.Interfaces.Stations
 {
     public interface IStationFactory
     {
-        IVehicle CreateVehicle(string type);
+        IStation CreateStation(string type);
     }
 }

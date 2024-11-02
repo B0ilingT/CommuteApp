@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommuteApp.Core.Models.Train
+namespace CommuteApp.Core.Models.Trains
 {
     public class Train : IVehicle
     {
-        public Guid ID { get; } = Guid.NewGuid();
+        public string ID { get; } = string.Empty;
         public string VehicleType { get; set; } = "Train";
         public DateTime? DepartureTime { get; set; }
         public required Station Destination { get; set; }

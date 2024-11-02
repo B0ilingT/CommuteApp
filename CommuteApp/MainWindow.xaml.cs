@@ -18,12 +18,6 @@ namespace CommuteApp
     {
         public MainWindow()
         {
-            InitializeComponent();
-        }
-
-        private void btnCheckCommute_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

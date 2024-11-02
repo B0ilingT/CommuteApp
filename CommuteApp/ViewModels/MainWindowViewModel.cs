@@ -9,15 +9,14 @@ namespace CommuteApp.ViewModels
     public class MainWindowViewModel
     {
         private readonly IBikeApiClient _bikeApiClient;
-        private readonly ITrainApiClient _trainApiClient;
+        //private readonly ITrainApiClient _trainApiClient;
 
         public ObservableCollection<BikeStation> Stations { get; set; }
         public ObservableCollection<Bike> Bikes { get; set; }
 
-        public MainWindowViewModel(IBikeApiClient bikeApiClient, ITrainApiClient stationApiClient)
+        public MainWindowViewModel(IBikeApiClient bikeApiClient)
         {
             _bikeApiClient = bikeApiClient;
-            _trainApiClient = stationApiClient;
             Stations = new ObservableCollection<BikeStation>();
             Bikes = new ObservableCollection<Bike>();
 

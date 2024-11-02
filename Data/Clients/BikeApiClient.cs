@@ -64,8 +64,9 @@ namespace CommuteApp.Data.Clients
         {
             var stationInfoResponse = await _httpClient.GetAsync("Greater_Manchester/station_information.json");
             stationInfoResponse.EnsureSuccessStatusCode();
-            var bikeStations = await stationInfoResponse.Content.ReadFromJsonAsync<List<BikeStationInformationDto>>();
-            return MapBikeStations(bikeStations);
+            var jsonContent = await stationInfoResponse.Content.ReadAsStringAsync();
+            var bikeStationResponse = await stationInfoResponse.Content.ReadFromJsonAsync<BikeStationApiResponseDto>();
+            return MapBikeStations(bikeStationResponse.Data.Stations);
         }
 
         private List<BikeStation> MapBikeStations(List<BikeStationInformationDto>? bikeStationsInformation)

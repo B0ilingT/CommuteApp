@@ -1,4 +1,5 @@
 ﻿using CommuteApp.Core.Models.Bikes;
+using CommuteApp.Core.Models.Trains;
 using System;
 using System.Collections.Generic;
 using System.Linq;

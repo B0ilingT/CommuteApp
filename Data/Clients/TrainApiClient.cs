@@ -5,7 +5,7 @@ using CommuteApp.Core.Models;
 using System.Collections.Generic;
 using CommuteApp.Data.Interfaces;
 using CommuteApp.Core.Models.Stations;
-using CommuteApp.Core.Models.Train;
+using CommuteApp.Core.Models.Trains;
 
 namespace CommuteApp.Data.Clients
 {

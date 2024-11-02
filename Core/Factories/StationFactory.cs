@@ -1,5 +1,6 @@
 ﻿using CommuteApp.Core.Interfaces.Stations;
 using CommuteApp.Core.Models;
+using CommuteApp.Core.Models.Stations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,9 @@ namespace CommuteApp.Core.Factories
             switch (type)
             {
                 case "Bike":
-                    //return new ElectricBike { BatteryLevel = 100 };
+                    return new BikeStation();
                 case "Train":
-                    //return new PedalBike();
+                    return new TrainStation();
                 default:
                     throw new ArgumentException("Unknown station type", nameof(type));
             }
