@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using CommuteApp.Data.Clients;
+using CommuteApp.Data.Interfaces;
+using CommuteApp.ViewModels;
+using System.Net.Http;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,8 +20,10 @@ namespace CommuteApp
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
+            InitializeComponent();
         }
     }
 }

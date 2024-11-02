@@ -25,7 +25,7 @@ namespace CommuteApp
         {
             services.AddDataServices();
 
-            services.AddSingleton<MainWindowViewModel>();
+            services.AddTransient<MainWindowViewModel>();
         }
     }
 }
