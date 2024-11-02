@@ -9,7 +9,7 @@ namespace CommuteApp.Core.Models.Stations
 {
     public class Station : IStation
     {
-        public Guid ID { get; } = Guid.NewGuid();
+        public string ID { get; set; } = String.Empty;
         public string StationType { get; set; } = "Station";
         public string StationName { get; set; } = "Station";
         public double Latitude { get; set; }

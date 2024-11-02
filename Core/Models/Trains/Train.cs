@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommuteApp.Core.Models.Bikes
+namespace CommuteApp.Core.Models.Train
 {
     public class Train : IVehicle
     {

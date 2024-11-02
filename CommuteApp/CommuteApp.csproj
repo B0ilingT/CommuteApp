@@ -17,6 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CommuteApp.Testing\CommuteApp.Testing.csproj" />
     <ProjectReference Include="..\Core\CommuteApp.Core.csproj" />
     <ProjectReference Include="..\Data\CommuteApp.Data.csproj" />

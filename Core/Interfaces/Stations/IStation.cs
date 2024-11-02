@@ -8,7 +8,7 @@ namespace CommuteApp.Core.Interfaces.Stations
 {
     public interface IStation
     {
-        Guid ID { get; }
+        string ID { get; set; }
         string StationType { get; }
         string StationName { get; set; }
         public double Latitude { get; set; }
