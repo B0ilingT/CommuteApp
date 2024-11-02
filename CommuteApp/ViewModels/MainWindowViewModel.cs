@@ -6,6 +6,7 @@ using CommuteApp.Data.Interfaces;
 
 namespace CommuteApp.ViewModels
 {
+    //Implement sorting when clicking headers, implement filtering, implement searching, implement click to open google maps, by default order by proxixity to user
     public class MainWindowViewModel
     {
         private readonly IBikeApiClient _bikeApiClient;
