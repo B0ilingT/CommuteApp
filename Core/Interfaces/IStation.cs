@@ -10,5 +10,8 @@ namespace CommuteApp.Core.Interfaces
     {
         Guid ID { get; }
         string StationType { get; }
+        string StationName { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
     }
 }

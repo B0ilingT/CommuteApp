@@ -11,6 +11,7 @@ namespace CommuteApp.Core.Models.Stations
     {
         public Guid ID { get; } = Guid.NewGuid();
         public string StationType { get; set; } = "Station";
+        public string StationName { get; set; } = "Station";
         public double Latitude { get; set; }
         public double Longitude { get; set; }
     }

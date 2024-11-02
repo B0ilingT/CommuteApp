@@ -12,5 +12,7 @@ namespace CommuteApp.Core.Models.Stations
         {
             StationType = "Bike Station";
         }
+        public int NumberOfBikes { get; set; }
+        public int NumberOfElectricBikes { get; set; }
     }
 }
