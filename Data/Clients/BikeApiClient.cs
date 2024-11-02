@@ -23,8 +23,8 @@ namespace CommuteApp.Data.Clients
         {
             var response = await _httpClient.GetAsync("Greater_Manchester/free_bike_status.json");
             response.EnsureSuccessStatusCode();
-            var bikes = await response.Content.ReadFromJsonAsync<List<Bike>>();
-            return bikes ?? new List<Bike>();
+            var bikes = await response.Content.ReadFromJsonAsync<BikeApiResponseDto>();
+            return MapBikes(bikes.Data.Bikes);
         }
 
         private List<Bike> MapBikes(List<BikeDto>? bikes)
@@ -45,7 +45,7 @@ namespace CommuteApp.Data.Clients
         {
             if (bikeInformation.CurrentRange == null || bikeInformation.VehicleTypeId == "beryl_bike")
             {
-                var bike = new PedalBike { ID = bikeInformation.BikeId, StationId = bikeInformation.StationId};
+                var bike = new PedalBike { ID = bikeInformation.BikeId, StationId = bikeInformation.StationId, Latitude = bikeInformation.Lat, Longitude = bikeInformation.Lon};
                 return bike;
             } else
             {
@@ -53,7 +53,9 @@ namespace CommuteApp.Data.Clients
                 {
                     ID = bikeInformation.BikeId,
                     StationId = bikeInformation.StationId,
-                    CurrentRange = bikeInformation.CurrentRange.Value
+                    CurrentRange = bikeInformation.CurrentRange.Value,
+                    Latitude = bikeInformation.Lat,
+                    Longitude = bikeInformation.Lon
                 };
 
                 return bike;
@@ -64,7 +66,6 @@ namespace CommuteApp.Data.Clients
         {
             var stationInfoResponse = await _httpClient.GetAsync("Greater_Manchester/station_information.json");
             stationInfoResponse.EnsureSuccessStatusCode();
-            var jsonContent = await stationInfoResponse.Content.ReadAsStringAsync();
             var bikeStationResponse = await stationInfoResponse.Content.ReadFromJsonAsync<BikeStationApiResponseDto>();
             return MapBikeStations(bikeStationResponse.Data.Stations);
         }

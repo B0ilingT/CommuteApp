@@ -13,7 +13,6 @@ namespace CommuteApp.Core.Models.Stations
         public List<Train> Trains { get; set; }
         public TrainStation()
         {
-            StationType = "Train Station";
             Trains = new List<Train>();
         }
     }

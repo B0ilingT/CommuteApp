@@ -15,7 +15,6 @@ namespace CommuteApp.Core.Models.Stations
         public List<Bike> Bikes { get; set; }
         public BikeStation()
         {
-            StationType = "Bike Station";
             Bikes = new List<Bike>();
         }
     }

@@ -11,8 +11,8 @@ namespace CommuteApp.Core.Models.Bikes
     {
         public String ID { get; set; } = String.Empty;
         public string VehicleType { get; set; } = "Bike";
-        public DateTime? LastServicedDate { get; set; }
-
-        public string StationId { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public string StationId { get; set; } = "N/A";
     }
 }
