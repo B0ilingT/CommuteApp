@@ -37,6 +37,11 @@ namespace CommuteApp.ViewModels
                 Bikes.Add(bike);
                 Stations.Where(s => s.ID == bike.StationId).FirstOrDefault()?.Bikes.Add(bike);
             }
+            foreach (var station in Stations) // I dont like this / its not the most efficient
+            {
+                station.NumberOfBikes = station.Bikes.Count;
+                station.NumberOfElectricBikes = station.Bikes.OfType<ElectricBike>().Count();
+            }
         }
     }
 }
