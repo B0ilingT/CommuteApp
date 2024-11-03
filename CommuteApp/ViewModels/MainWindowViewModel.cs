@@ -24,7 +24,7 @@ namespace CommuteApp.ViewModels
             LoadDataAsync();
         }
 
-        private async void LoadDataAsync()
+        public async void LoadDataAsync()
         {
             List<BikeStation> stations = await _bikeApiClient.GetBikeStationsAsync();
             foreach (var station in stations)

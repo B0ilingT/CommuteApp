@@ -55,5 +55,13 @@ namespace CommuteApp
             dataView.SortDescriptions.Add(new SortDescription(sortBy, direction));
             dataView.Refresh();
         }
+
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is MainWindowViewModel viewModel)
+            {
+                viewModel.LoadDataAsync();
+            }
+        }
     }
 }
