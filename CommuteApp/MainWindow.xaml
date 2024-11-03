@@ -15,9 +15,32 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Margin="0,0,0,10">
-            <TextBox Width="150" Margin="0,0,10,0"
-                     Text="{Binding BikeStationSearchText, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button x:Name="btnSearch" Content="Search" Command="{Binding SearchBikeStationCommand}" Width="100" Margin="0,0,10,0"/>
+            <Grid Width="150" Height="30" Margin="0,0,10,0">
+                <TextBox x:Name="txtBikeSearch" Width="150" Margin="0,0,0,0"
+                    Text="{Binding BikeSearchText, UpdateSourceTrigger=PropertyChanged}" 
+                    Padding="5,5,5,5"
+                    TextChanged="txtBikeSearch_TextChanged"
+                />
+                <Label x:Name="txtBikeSearchPlaceholder" Content="Bike Station Search..."
+                   Background="Transparent" Opacity="0.5" 
+                   IsHitTestVisible="False" 
+                   VerticalAlignment="Center" HorizontalAlignment="Left" 
+                   Margin="5,0,0,0"
+                />
+            </Grid>
+            <Grid Width="150" Height="30" Margin="0,0,10,0">
+                <TextBox x:Name="txtTrainSearch" Width="150" Margin="0,0,0,0"
+                    Text="{Binding TrainSearchText, UpdateSourceTrigger=PropertyChanged}" 
+                    Padding="5,5,5,5"
+                    TextChanged="txtBikeSearch_TextChanged"
+                />
+                <Label x:Name="txtTrainSearchPlaceholder" Content="Train Station Search..."
+                   Background="Transparent" Opacity="0.5" 
+                   IsHitTestVisible="False" 
+                   VerticalAlignment="Center" HorizontalAlignment="Left" 
+                   Margin="5,0,0,0"
+                />
+            </Grid>
             <Button x:Name="btnRefresh" Content="Refresh Data" Command="{Binding RefreshDataCommand}" Width="100" Click="btnRefresh_Click"/>
         </StackPanel>
 
@@ -34,7 +57,7 @@
         </GroupBox>
 
         <GroupBox Header="Bike Availability" Grid.Row="2" Margin="0,0,0,10">
-            <ListView x:Name="StationsListView" ItemsSource="{Binding Stations}" SelectedItem="{Binding SelectedStation}" Margin="0,0,0,10">
+            <ListView x:Name="StationsListView" ItemsSource="{Binding FilteredStations}" SelectedItem="{Binding SelectedStation}" Margin="0,0,0,10">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Width="200">

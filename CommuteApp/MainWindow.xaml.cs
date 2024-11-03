@@ -29,6 +29,18 @@ namespace CommuteApp
             InitializeComponent();
         }
 
+        private void txtBikeSearch_TextChanged(Object sender, TextChangedEventArgs e)
+        {
+            if (txtBikeSearch.Text != "")
+            {
+                txtBikeSearchPlaceholder.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                txtBikeSearchPlaceholder.Visibility = Visibility.Visible;
+            }
+        }
+
         private void GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
         {
             var headerClicked = sender as GridViewColumnHeader;
@@ -60,6 +72,7 @@ namespace CommuteApp
         {
             if (DataContext is MainWindowViewModel viewModel)
             {
+                viewModel.Stations.Clear();
                 viewModel.LoadDataAsync();
             }
         }
