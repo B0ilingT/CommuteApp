@@ -37,9 +37,9 @@ namespace CommuteApp
             string sortBy = headerClicked.Column.DisplayMemberBinding is Binding binding ? binding.Path.Path : null;
             if (string.IsNullOrEmpty(sortBy)) return;
 
-            ListSortDirection direction = ListSortDirection.Ascending;
-            if (headerClicked == _lastHeaderClicked && _lastDirection == ListSortDirection.Ascending)
-                direction = ListSortDirection.Descending;
+            ListSortDirection direction = ListSortDirection.Descending;
+            if (headerClicked == _lastHeaderClicked && _lastDirection == ListSortDirection.Descending)
+                direction = ListSortDirection.Ascending;
 
             Sort(sortBy, direction);
 
